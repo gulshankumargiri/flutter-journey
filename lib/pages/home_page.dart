@@ -19,8 +19,8 @@ final String name = "gulshan kr giri";
       drawer: Drawer(),
       bottomNavigationBar:Row(
         children: [
-          CloseButton(),
-          BackButton(),
+          Expanded(child: CloseButton()),
+          Expanded(child: BackButton()),
 
         ],
       ),
