@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:sadi_sajawat/pages/home_page.dart';
 import 'package:sadi_sajawat/pages/login_page.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:sadi_sajawat/utils/routes.dart';
+import 'package:sadi_sajawat/widgets/theme.dart';
 void main(){
   runApp(Myapp());
 }
 
 class Myapp extends StatelessWidget {
+  const Myapp({super.key});
+
 
 
   @override
@@ -16,19 +19,14 @@ class Myapp extends StatelessWidget {
 
       // home: HomePage(),
       themeMode: ThemeMode.light,
-      theme: ThemeData(
-          fontFamily: GoogleFonts.lato().fontFamily,
-          primarySwatch: Colors.deepPurple,
-          // primaryTextTheme: GoogleFonts.latoTextTheme()
-      ),
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
-      ),
-      initialRoute: "/home",
+      theme: MyTheme.lightTheme(context),
+      darkTheme:MyTheme.darkTheme(context),
+      initialRoute: MyRoutes.homeRoute,
       routes: {
         "/":(context) => LoginPage(),
-        "/home":(context)=>HomePage(),
-        "/login":(context)=>LoginPage(),
+         MyRoutes.homeRoute:(context)=>HomePage(),
+         MyRoutes.loginRoute:(context)=>LoginPage(),
+        // "/login":(context)=>LoginPage(),
       },
     );
   }

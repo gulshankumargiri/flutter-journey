@@ -5,6 +5,8 @@ void main(){
 }
 
 class FlutterApp extends StatelessWidget {
+  const FlutterApp({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +22,8 @@ class FlutterApp extends StatelessWidget {
 
 }
 class DashBoardScreen extends StatelessWidget{
+  const DashBoardScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,8 +63,8 @@ class DashBoardScreen extends StatelessWidget{
               children: [
                 Container(
                   height: 50,
-                  child: Center(child: Text("hello i am stuck")),
                   color: Colors.black,
+                  child: Center(child: Text("hello i am stuck")),
                 ),
                 Container(
                   height: 50,
@@ -70,13 +74,13 @@ class DashBoardScreen extends StatelessWidget{
                 ),
                 Container(
                   height: 50,
-                  child: Center(child: Text("hello i am stuck")),
                   color: Colors.green,
+                  child: Center(child: Text("hello i am stuck")),
                 ),
                 Container(
                   height: 50,
-                  child: Center(child: Text("hello i am stuck")),
                   color: Colors.red,
+                  child: Center(child: Text("hello i am stuck")),
                 ),
               ],
             ),

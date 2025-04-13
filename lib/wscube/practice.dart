@@ -13,7 +13,7 @@ print("welcome,$name");
 
 
   //creating a class object.
-new Human();//with new keyword
+Human();//with new keyword
 Human();// without new keyword both are correct and this is latest update in flutter.
 
 
