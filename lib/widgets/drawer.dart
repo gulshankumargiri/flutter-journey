@@ -10,7 +10,6 @@ class MyDrawer extends StatelessWidget {
     final image2= "assets/images/gulshan.jpg";
 
     return Drawer(
-
       child: Container(
         color: Colors.deepPurple[600],
         child: ListView(
@@ -25,17 +24,17 @@ class MyDrawer extends StatelessWidget {
                   accountName: Text("Gulshan kr Giri"),
                   accountEmail:Text("golukr@gmail.com"),
                   currentAccountPicture: CircleAvatar(
-                    backgroundImage: AssetImage(image1),
+                    backgroundImage: AssetImage(image1,),
                     // backgroundImage: NetworkImage(image ka url),
                   ),
-
                 )
-
             ),
             ListTile(
-              leading: Icon(CupertinoIcons.home,color: Colors.white,
+              leading: Icon(CupertinoIcons.home,
+                color: Colors.white,),
+              title: Text("Home",style: TextStyle(
+                  color: Colors.white),
               ),
-              title: Text("Home",style: TextStyle(color: Colors.white),),
             ),
             ListTile(
               leading: Icon(CupertinoIcons.profile_circled,color: Colors.white,
