@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sadi_sajawat/models/catalog.dart';
+import 'package:sadi_sajawat/pages/home_details_page.dart';
 import 'package:sadi_sajawat/widgets/homepage_widgets/catalog_image.dart';
 import 'package:sadi_sajawat/widgets/theme.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -14,7 +15,14 @@ class CatalogList extends StatelessWidget {
         itemCount: CatalogModel.items.length,
         itemBuilder:(context ,index){
           final catalog = CatalogModel.items[index];
-          return CatalogItem(catalog: catalog,);
+          return InkWell(
+              onTap: ()=>Navigator.push(
+                  context, MaterialPageRoute(
+                  builder: (context)=>HomeDetailPage(
+                      catalog: catalog),
+              ),),
+              child: CatalogItem(catalog: catalog,)
+          );
         }
     );
   }
@@ -29,7 +37,9 @@ final Item catalog;
     return VxBox(
       child: Row(
         children: [
-          CatalogImage(image: catalog.images,),
+          Hero(
+              tag:Key(catalog.id.toString()),
+              child: CatalogImage(image: catalog.images,)),
           Expanded(child: 
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -51,7 +61,7 @@ final Item catalog;
                         backgroundColor:WidgetStateProperty.all(MyTheme.darkBluishColor),
                       ),
                       onPressed:(){},
-                      child: "Buy".text.color(Colors.white).make(),
+                      child: "Add to Cart".text.color(Colors.white).make(),
                     )
                   ],
                 ),
