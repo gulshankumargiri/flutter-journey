@@ -45,9 +45,9 @@ final Item catalog;
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              catalog.name.text.lg.color(MyTheme.darkBluishColor).bold.make(),
+              catalog.name.text.lg.color(Theme.of(context).colorScheme.onSecondary).bold.make(),
               "${catalog.desc.split(' ').take(8).join(' ')}..."
-                    .text.textStyle(context.captionStyle)
+                    .text.textStyle(context.captionStyle).color(Theme.of(context).colorScheme.onSecondary)
                     .make(),
               10.heightBox,
               Padding(
@@ -55,10 +55,10 @@ final Item catalog;
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    "\$${catalog.price}".text.bold.xl.make(),
+                    "\$${catalog.price}".text.bold.xl.color(Theme.of(context).colorScheme.onSecondary).make(),
                     ElevatedButton(
                       style: ButtonStyle(
-                        backgroundColor:WidgetStateProperty.all(MyTheme.darkBluishColor),
+                        backgroundColor:WidgetStateProperty.all(Theme.of(context).colorScheme.secondary),
                       ),
                       onPressed:(){},
                       child: "Add to Cart".text.color(Colors.white).make(),
@@ -70,6 +70,6 @@ final Item catalog;
           )),
         ],
       ),
-    ).white.rounded.square(150).make().py16();
+    ).color(context.cardColor).rounded.square(150).make().py16();
   }
 }
