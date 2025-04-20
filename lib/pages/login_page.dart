@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sadi_sajawat/utils/routes.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -33,7 +34,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.white,
+      color: context.canvasColor,
     // child: Center(
     //   child: Text("Login Page",
     //   style: TextStyle(
@@ -49,18 +50,16 @@ class _LoginPageState extends State<LoginPage> {
           key: _formKey,
           child: Column(
             children: [
-              SizedBox(
-                height: 50.0,
-              ),
               Image.asset("assets/images/login.png",
               fit: BoxFit.cover,
-              height: 200,),
-              SizedBox(
-                height: 30.0,
               ),
-              Text("Welcome back $name",
+              SizedBox(
+                height: 20.0,
+              ),
+              Text("Welcome $name",
                 style:TextStyle(
                 fontSize: 22,
+                color: context.cardColor,
                 fontWeight: FontWeight.bold,)
               ),
               SizedBox(
@@ -69,6 +68,7 @@ class _LoginPageState extends State<LoginPage> {
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 16.0,horizontal: 32.0),
                 child: Column(
+
                   children: [
                     TextFormField(
                       decoration:InputDecoration(
@@ -108,7 +108,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
 
                     Material(
-                      color: Colors.deepPurple,
+                      color: Theme.of(context).colorScheme.secondary,
                         borderRadius: BorderRadius.circular(
                             changeButton ? 50 :8),
 
@@ -150,7 +150,7 @@ class _LoginPageState extends State<LoginPage> {
                     //     },
                     // ),
                   ]
-                ),
+                )
 
               ),
 

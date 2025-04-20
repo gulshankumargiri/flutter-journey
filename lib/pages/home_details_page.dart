@@ -13,19 +13,18 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
+      appBar: AppBar(backgroundColor: Colors.transparent,
       ),
-      backgroundColor: MyTheme.creamColor,
+      backgroundColor: context.canvasColor,
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: context.cardColor,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             "\$${catalog.price}".text.bold.xl4.color(Vx.red900).make(),
             ElevatedButton(
               style: ButtonStyle(
-                backgroundColor:WidgetStateProperty.all(MyTheme.darkBluishColor),
+                backgroundColor:WidgetStateProperty.all(Theme.of(context).colorScheme.secondary),
               ),
               onPressed:(){},
               child: "Add to Cart".text.xl2.color(Colors.white).make(),
@@ -39,19 +38,19 @@ class HomeDetailPage extends StatelessWidget {
           children: [
             Hero(tag:Key(catalog.id.toString()),
                 child: Image.network(catalog.images).h32(context),),
-            Expanded(child:
-            VxArc(
+            Expanded(
+                child: VxArc(
                 height: 30.0,
                 arcType: VxArcType.convey,
                 edge: VxEdge.top,
                 child: Container(
                   width: context.screenWidth,
-                  color: Colors.white,
+                  color: context.cardColor,
                   child: Column(
                     children: [
-                      catalog.name.text.xl4.color(MyTheme.darkBluishColor).bold.make(),
-                      catalog.desc
-                          .text.textStyle(context.captionStyle).lg
+                      catalog.name.text.xl4.color(Theme.of(context).colorScheme.onSecondary).bold.make(),
+                      catalog.desc.text.textStyle(
+                          context.captionStyle).color(Theme.of(context).colorScheme.onSecondary).lg
                           .make(),
                       10.heightBox,
                     ],

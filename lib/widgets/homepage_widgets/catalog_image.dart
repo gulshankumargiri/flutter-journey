@@ -13,6 +13,6 @@ class CatalogImage extends StatelessWidget {
         image,
         fit: BoxFit.cover,
 
-    ).box.rounded.p16.color(MyTheme.creamColor).make().p16().w40(context);
+    ).box.rounded.p16.color(context.canvasColor).make().p16().w40(context);
   }
 }
